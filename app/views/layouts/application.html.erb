@@ -1,14 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Fmp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Andrew Farmer Final Major Project" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "head/application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <%= render "shared/flashes" %>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+    <%= javascript_include_tag "body/application" %>
+  </body>
 </html>

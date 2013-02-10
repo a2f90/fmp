@@ -1,0 +1,4 @@
+html, body{
+	background-image: url('textures/debut_light.png');
+	@include at2x('textures/debut_light_@2X.png', 200px, 200px);
+}
